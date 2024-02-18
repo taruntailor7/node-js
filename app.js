@@ -13,3 +13,12 @@ const http = require('http');
 console.log(path, 'path');
 // console.log(fs, 'fs');
 // console.log(http, 'http');
+
+// lodash module
+
+const _ =  require('lodash');
+
+const items = [1, [2, [3, [4]]]];
+const newItems = _.flatMapDeep(items);
+
+console.log(newItems, 'newItems'); 
