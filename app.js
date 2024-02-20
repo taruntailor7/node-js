@@ -1,4 +1,4 @@
-console.log(module, 'module');
+// console.log(module, 'module');
 // module.exports is an object 
 
 // Some built-in modules
@@ -10,7 +10,7 @@ const fs = require('fs');
 const http = require('http');
 
 // console.log(os, 'os'); 
-console.log(path, 'path');
+// console.log(path, 'path');
 // console.log(fs, 'fs');
 // console.log(http, 'http');
 
@@ -22,3 +22,4 @@ const items = [1, [2, [3, [4]]]];
 const newItems = _.flatMapDeep(items);
 
 console.log(newItems, 'newItems'); 
+console.log("Hello World!!!");
