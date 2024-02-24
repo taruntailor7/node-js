@@ -32,21 +32,6 @@ app.post("/api/users", (req, res) => {
     });
 });
 
-// app.get("/api/users/:id", (req, res) => {
-//     const id = Number(req.params.id);
-//     const user = users.find((user) => user.id === id);
-//     return res.json(user);
-// });
-
-// app.patch("/api/users/:id", (req, res) => {
-//     return res.json({status: "pending"});
-// });
-
-// app.delete("/api/users/:id", (req, res) => {
-//     return res.json({status: "pending"});
-// });
-
-
 app
 .route("/api/users/:id")
 .get((req, res) => {
@@ -55,10 +40,30 @@ app
     return res.json(user);
 })
 .patch((req,res) => {
-    return res.json({status: "pending"});
+    const id = Number(req.params.id);
+    const body = req.body;
+
+    const userIndex = users.findIndex((user) => user.id === id);
+
+    users[userIndex] = {
+        ...users[userIndex], // Keep the existing properties
+        ...body // Overwrite with the updated properties
+    };
+
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+        return res.json({status: "Updated"});
+    });
 })
 .delete((req,res) => {
-    return res.json({status: "pending"});
+    const id = Number(req.params.id);
+
+    const userIndex = users.findIndex((user) => user.id === id);
+
+    const deletedUser = users.splice(userIndex, 1)[0];
+    
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+        return res.json({status: "Deleted", deletedUser});
+    });
 });
 
 app.listen(PORT, () => {
