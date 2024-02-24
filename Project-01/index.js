@@ -9,6 +9,11 @@ const PORT = 5000;
 //Middleware
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) => {
+    fs.appendFile("log.txt", `\n${Date.now()} : ${req.method} : ${req.path}`, (err, data) => {
+        next();
+    });
+})
 
 app.get("/users", (req, res) => {
     const html = `
@@ -35,6 +40,8 @@ app.post("/api/users", (req, res) => {
 app
 .route("/api/users/:id")
 .get((req, res) => {
+    res.setHeader("X-MyName", "Tarun Tailor");
+    // Always ass X to custom headers
     const id = Number(req.params.id);
     const user = users.find((user) => user.id === id);
     return res.json(user);
@@ -60,7 +67,7 @@ app
     const userIndex = users.findIndex((user) => user.id === id);
 
     const deletedUser = users.splice(userIndex, 1)[0];
-    
+
     fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
         return res.json({status: "Deleted", deletedUser});
     });
