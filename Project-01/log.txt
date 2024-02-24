@@ -3,3 +3,17 @@
 1708796681710 : GET : /api/users/8
 
 1708796710008 : GET : /api/users/8
+1708798974958 : GET : /api/users/8
+1708799147292 : POST : /api/users/8
+1708799149160 : POST : /api/users/8
+1708799161150 : POST : /api/users/8
+1708799199798 : POST : /api/users/8
+1708799213708 : POST : /api/users/8
+1708799214513 : POST : /api/users/8
+1708799226696 : POST : /api/users/8
+1708799227469 : POST : /api/users/8
+1708799231173 : POST : /api/users
+1708799232349 : POST : /api/users
+1708799233758 : POST : /api/users
+1708799241889 : POST : /api/users
+1708799242514 : POST : /api/users
