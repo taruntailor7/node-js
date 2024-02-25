@@ -57,3 +57,17 @@
 1708881459704 : GET : /api/users
 1708883876013 : GET : /api/users
 1708883877142 : GET : /api/users
+1708886370662 : POST : /api/users
+1708886380710 : POST : /api/user
+1708886443159 : POST : /api/user
+1708886449333 : GET : /api/users
+1708886452002 : GET : /api/user
+1708886459543 : GET : /api/user/65db89abe2a63b33155e94aa
+1708886464847 : GET : /api/user
+1708886494792 : PATCH : /api/user/65db89abe2a63b33155e94aa
+1708886498146 : GET : /api/user
+1708886533602 : POST : /api/user/65db89abe2a63b33155e94aa
+1708886541611 : POST : /api/user
+1708886546325 : GET : /api/user
+1708886557362 : DELETE : /api/user/65db8a0de2a63b33155e94b1
+1708886559805 : GET : /api/user
